@@ -1,4 +1,4 @@
-#include <iostream>
+#i#include <iostream>
 using namespace std;
 
 float getPrice(int RoomType);
@@ -29,7 +29,6 @@ int main()
     cout << "Enter number of nights: ";
     cin >> NumOfNights;
 
-
     if (RoomType == 1)
         cout << "You selected Standard Room.\n";
     else if (RoomType == 2)
@@ -38,7 +37,6 @@ int main()
         cout << "You selected Suite Room.\n";
     else
         cout << "Invalid room type selected.\n";
-
 
     cout << "Do you have a promo code? (Y/N): ";
     cin >> PromoCode;
@@ -65,7 +63,7 @@ float getPrice(int RoomType)
     if (RoomType == 1) return 150.00;
     else if (RoomType == 2) return 200.00;
     else if (RoomType == 3) return 300.00;
-    else return 0;
+    return 0;
 }
 
 float calculateDiscount(float Subtotal, int NumOfNights)
@@ -89,13 +87,6 @@ float applyPromo(char PromoCode)
     return 0.0;
 }
 
-void displayMessage()
-{
-    cout << "-----------------------------------------------------\n";
-    cout << "VIP CUSTOMER : You are eligible for free airport pickup!\n";
-    cout << "-----------------------------------------------------\n";
-}
-
 void displaySummary(float PricePerNight, int NumOfNights, float Subtotal, float Discount, float FinalTotal)
 {
     cout << "\n------------------- BOOKING SUMMARY -------------------\n";
@@ -105,4 +96,11 @@ void displaySummary(float PricePerNight, int NumOfNights, float Subtotal, float 
     cout << "Total Discount  : RM " << Discount << endl;
     cout << "Final Total     : RM " << FinalTotal << endl;
     cout << "-------------------------------------------------------\n";
+}
+
+void displayMessage()
+{
+    cout << "-----------------------------------------------------\n";
+    cout << "VIP CUSTOMER : You are eligible for free airport pickup!\n";
+    cout << "-----------------------------------------------------\n";
 }
